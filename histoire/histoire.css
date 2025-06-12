@@ -1,0 +1,261 @@
+* {
+    box-sizing: border-box; /* S'assure que les paddings et bordures ne débordent pas */
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+    margin: 0; /* Évite les marges par défaut du body */
+    line-height: 1.6;
+    overflow-x: hidden; /* Cache le défilement horizontal */
+}
+
+h1 {
+    font-size: 24px;
+    color: #FF6600;
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+    color: #333333;
+}
+
+body {
+    margin: 0;
+}
+
+nav{
+    text-align: center;
+    padding: 30px;
+    background-color: black;
+    
+    }
+    nav a{
+    margin-right: 5%;
+    text-decoration: none;
+    color: orange;
+    justify-content: space-between;
+    font-size: 24px;
+    overflow: hidden;
+    }
+    nav a img{
+      z-index: 100;
+      position:absolute;
+      margin-left: -50px;
+      margin-top: -15px;
+    }
+    nav a:hover{
+     background-color: #131313;
+    }
+
+    .boutton_fr  {
+      text-align: end;
+      margin-top :-27px;
+      font-size: 24px;
+    }
+
+.timeline-container {
+    position: relative;
+    margin: 100px 0;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: -50px; /* Commence avant la première date */
+    height: calc(100% + 50px); /* Pour que la ligne prenne toute la hauteur plus le décalage du haut */
+    width: 2px;
+    background-color: #FF6600;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 80px 0; /* Plus d'espace entre les items */
+    position: relative;
+}
+
+.timeline-date-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #FF6600;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+
+body{
+    margin: 0; 
+  }
+  
+  ::-webkit-scrollbar{
+    display: none;
+  }
+.timeline-text {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 30px; /* Plus d'espace à l'intérieur du texte */
+    width: 40%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.timeline-image-container {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Espace entre le texte et l'image */
+}
+
+.timeline-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+}
+
+/* Inverser les éléments texte et image pour les éléments pairs */
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Footer */
+.footer {
+    background-color: #f27900;
+    padding: 70px 0;
+    width: 100%; /* Utilise 100% pour éviter le débordement */
+    margin: 0 auto; /* Centre le footer sans débordement */
+    margin-top: 50px; /* Ajustez cette valeur si nécessaire */
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #000000;
+    height: 2px;
+    box-sizing: border-box;
+    width: 200px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(57, 33, 33, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+/* Section Copyright */
+.copyright {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin-top: 20px; 
+    padding: 10px 0; 
+}
+
+.copyright h5 {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .timeline-item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .timeline-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .timeline-text {
+        width: auto;
+        margin: 10px 0;
+    }
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+  
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

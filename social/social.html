@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr"> <!-- Correction de la langue -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social</title>
+    <link rel="stylesheet" href="social.css">
+    <link rel="icon" href="../favicon.ico">
+</head>
+<body>
+    <nav>
+        <a href="../index.html"><img width="50" src="../images/orange-svgrepo-com.svg" alt=""></a> <!-- Suppression du 'px' -->
+        <a href="../offres/offres.html">Offres</a>
+        <a href="../histoire/histoire.html">Histoire</a>
+        <a href="../ecologie/ecologie.html">Ecologie</a>
+        <a href="../economie/economie.html">Economie</a>
+        <a href="../social/social.html">Social</a>
+        <div class="boutton_fr">
+            <a href="../social/social_en.html"><strong>FR</strong> / EN</a>
+        </div>
+    </nav>
+    
+    <div class="corps">
+        <div class="photo">
+            <div class="JF">
+                <p class="nom">Jean-François FALLACHER</p>
+                <img src="../images/JF.jfif" alt="Jean-François FALLACHER">
+                <input type="checkbox" id="more-jf" class="checkbox">
+                <label for="more-jf" class="savoir">En savoir plus</label>
+                <div class="plusTexte">
+                    <p>Jean-François Fallacher a une longue carrière chez Orange, ayant dirigé des filiales dans plusieurs pays avant d’être nommé CEO en 2023.</p>
+                </div>
+            </div>
+            <div class="ET">
+                <p>Elizabeth TCHOUNGUI</p>
+                <img src="../images/ET.jpg" alt="Elizabeth TCHOUNGUI">
+                <input type="checkbox" id="more-et" class="checkbox">
+                <label for="more-et" class="savoir">En savoir plus</label>
+                <div class="plusTexte">
+                    <p>Elizabeth Tchoungui est Directrice exécutive en charge de la responsabilité sociétale et environnementale depuis 2023.</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="texte-1">
+            <p>Le créateur de l'entreprise France Télécom est inconnu, il est resté anonyme. En revanche, le 1er janvier 1991, Marcel Roulet fut désigné comme le premier président.</p>
+        </div>
+    
+        <div class="texte-2">
+            <p>L'entreprise compte 136 000 salariés en revanche seul 30% sont 
+                des femmes. Cependant, Orange a des politiques en faveur de 
+                l'égalité et tente d'augmenter la représentation
+                des femmes, notamment dans les postes de direction.</p>
+        </div>
+    
+        <div class="texte-3">
+            <p>Orange entretient un dialogue social constant avec les syndicats, assurant des négociations collectives régulières sur des sujets comme les conditions de travail et les réformes internes. Cette approche garantit un environnement de travail respectueux et équilibré, renforçant la transparence et le bien-être des employés.</p>
+        </div>
+    
+        <div class="texte-4">
+            <p>Orange encourage ses employés à participer à des projets de bénévolat, notamment à travers la Fondation Orange. Le mécénat de compétences permet aux salariés d’utiliser leurs compétences professionnelles pour des causes sociales, comme l’éducation numérique et le soutien aux communautés défavorisées.</p>
+        </div>
+        <div class="texte-5">
+            <p>Orange met en place des programmes de soutien mental et physique pour ses employés, incluant des services de gestion du stress et des consultations psychologiques. L'entreprise propose aussi des activités sportives et ergonomiques pour promouvoir un environnement de travail sain et équilibré.</p>
+        </div>
+    </div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>Plus de notre site</h4>
+                <ul>
+                    <li><a href="../histoire/histoire.html">Histoire</a></li>
+                    <li><a href="../offres/offres.html">Offres</a></li>
+                    <li><a href="../ecologie/ecologie.html">Ecologie</a></li>
+                    <li><a href="../economie/economie.html">Economie</a></li>
+                    <li><a href="../social/social.html">Social</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Suivre Orange</h4>
+                <div class="social-links">
+                    <a class="fb-logo" href="https://www.facebook.com/Orange.France/">
+                        <img width="40" src="../images/icons8-facebook.svg" alt=""> <!-- Suppression du 'px' -->
+                    </a>
+                    <a class="fb-logo" href="https://x.com/orange">
+                        <img width="40" src="../images/icons8-twitterx.svg" alt=""> <!-- Suppression du 'px' -->
+                    </a>
+                    <a class="fb-logo" href="https://www.instagram.com/orange/">
+                        <img width="40" src="../images/icons8-instagram.svg" alt=""> <!-- Suppression du 'px' -->
+                    </a>
+                    <a class="fb-logo" href="https://fr.linkedin.com/company/orange">
+                        <img width="40" src="../images/icons8-linkedin.svg" alt=""> <!-- Suppression du 'px' -->
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <script>
+       document.addEventListener("DOMContentLoaded", function() {
+           const elements = document.querySelectorAll('.texte-1, .texte-2, .texte-3, .texte-4, .texte-5');
+           const observer = new IntersectionObserver((entries) => {
+               entries.forEach(entry => {
+                   if (entry.isIntersecting) {
+                       entry.target.classList.add('visible');
+                   } else {
+                       entry.target.classList.remove('visible');
+                   }
+               });
+           }, {
+               threshold: 0.7 
+           });
+           elements.forEach(element => {
+               element.classList.add('hidden');
+               observer.observe(element);
+           });
+       });
+    </script>
+<div class="copyright">
+  <h5>Page faite par Bigeard. Noa</h5>
+</div>
+</footer>
+
+</body>
+</html>
