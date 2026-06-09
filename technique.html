@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Arthur Aigubelle | Technique</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== EN-TÊTE (toujours visible) ===== -->
+<header class="site-header">
+    <span class="hdr-name">Aigubelle Arthur</span>
+    <span class="hdr-sep">|</span>
+    <span class="hdr-email">arthur.aigubelle@gmail.com</span>
+    <div class="hdr-right">
+        <span class="hdr-badge">BUT Informatique — 2ème année</span>
+        <span class="hdr-badge accent">IUT Belfort-Montbéliard</span>
+    </div>
+</header>
+
+<div class="layout">
+
+    <!-- NAVIGATION PRINCIPALE -->
+    <nav class="sidebar">
+        <div class="sidebar-logo">
+            <div class="sidebar-logo-title">Portfolio</div>
+            <div class="sidebar-logo-name">Arthur Aigubelle</div>
+        </div>
+        <span class="nav-label">Navigation</span>
+        <a href="index.html" class="nav-link">
+            <span class="nav-icon">🏠</span> Accueil
+        </a>
+        <a href="technique.html" class="nav-link active">
+            <span class="nav-icon">⚙️</span> Technique
+        </a>
+        <a href="suivi-projet.html" class="nav-link">
+            <span class="nav-icon">📋</span> Suivi de projet
+        </a>
+        <a href="integration.html" class="nav-link">
+            <span class="nav-icon">🤝</span> Intégration en entreprise
+        </a>
+    </nav>
+
+    <!-- CONTENU -->
+    <main class="main">
+
+        <div class="page-header">
+            <div class="page-title">⚙️ Technique informatique</div>
+            <p class="page-sub">
+                Cette section présente les savoir-faire techniques mis en œuvre lors du développement
+                de l'outil de diffusion TV. Trois traces illustrent des savoir-faire élémentaires liés à
+                la conception du modèle de données, au développement d'une API REST et à l'implémentation
+                d'une authentification Azure AD. Le bilan évalue le niveau d'expertise atteint dans les
+                savoir-faire généraux correspondants.
+            </p>
+        </div>
+
+        <!-- NAVIGATION SOUS-PAGES (séparée de la nav principale) -->
+        <div class="subpage-nav">
+            <button class="tab-btn active" onclick="showTab('t1')">Trace 1 · Modèle de données ORM</button>
+            <button class="tab-btn" onclick="showTab('t2')">Trace 2 · API REST Symfony</button>
+            <button class="tab-btn" onclick="showTab('t3')">Trace 3 · Authentification Azure AD</button>
+            <button class="tab-btn" onclick="showTab('tbilan')">Bilan &amp; Analyse</button>
+        </div>
+
+        <!-- ===== TRACE 1 : MODÈLE DE DONNÉES ORM ===== -->
+        <div id="t1" class="tab-panel active">
+            <div class="card">
+                <div class="card-title"><span class="icon">📦</span> Trace T-1 : Conception du modèle de données avec Doctrine ORM</div>
+
+                <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">Savoir-faire élémentaires abordés :</p>
+                <div class="skills-row">
+                    <span class="skill s-db">Créer des entités PHP annotées (Doctrine ORM)</span>
+                    <span class="skill s-db">Définir des relations entre entités (ManyToOne, OneToMany, ManyToMany)</span>
+                    <span class="skill s-dev">Utiliser les groupes de sérialisation Symfony</span>
+                    <span class="skill s-db">Mapper un modèle objet vers une base de données relationnelle</span>
+                </div>
+
+                <!-- Trace numérotée, titrée et légendée -->
+                <div class="trace-wrap">
+                    <div class="trace-label">
+                        <span class="trace-num">T-1</span>
+                        <span class="trace-title-text">Entité <code>Presentation.php</code> — Modèle objet Doctrine avec relations et sérialisation</span>
+                    </div>
+                    <div class="trace-body">
+                        <div class="img-placeholder">
+                            <img src="image.png" alt="Capture de l'entité Presentation.php dans PhpStorm — annotations ORM et relations visibles">
+                            <br>[ Capture : entité Presentation.php avec attributs ORM, relations et groupes de sérialisation ]
+                        </div>
+
+                        <div class="code-block"><span class="ca">#[ORM\Entity(repositoryClass: PresentationRepository::class)]</span>
+<span class="ck">class</span> <span class="cm">Presentation</span>
+{
+    <span class="hl-line"><span class="ca">#[ORM\Id, ORM\GeneratedValue, ORM\Column]</span>                    <span class="cc">// (1)</span></span>
+    <span class="ca">#[Groups([</span><span class="cs">'presentation:read'</span><span class="ca">])]</span>                             <span class="cc">// (2)</span>
+    <span class="ck">private</span> ?<span class="ck">int</span> $id = <span class="cn">null</span>;
+
+    <span class="ca">#[ORM\Column(length: 255, nullable: true)]</span>
+    <span class="ca">#[Groups([</span><span class="cs">'presentation:read'</span><span class="ca">])]</span>
+    <span class="ck">private</span> ?<span class="ck">string</span> $nomPresentation = <span class="cn">null</span>;
+
+    <span class="hl-line"><span class="ca">#[ORM\ManyToOne(inversedBy: </span><span class="cs">'presentationsDiffusees'</span><span class="ca">)]</span>        <span class="cc">// (3)</span></span>
+    <span class="ca">#[Groups([</span><span class="cs">'presentation:read'</span><span class="ca">])]</span>
+    <span class="ck">private</span> ?Programme $programme = <span class="cn">null</span>;
+
+    <span class="hl-line"><span class="ca">#[ORM\OneToMany(targetEntity: Article::class, mappedBy: </span><span class="cs">'presentation'</span><span class="ca">)]</span>  <span class="cc">// (4)</span></span>
+    <span class="ca">#[Groups([</span><span class="cs">'presentation:read'</span><span class="ca">])]</span>
+    <span class="ck">private</span> Collection $articles;
+
+    <span class="ca">#[ORM\Column(type: Types::SIMPLE_ARRAY, nullable: true)]</span>
+    <span class="ca">#[Groups([</span><span class="cs">'presentation:read'</span><span class="ca">])]</span>
+    <span class="ck">private</span> ?<span class="ck">array</span> $joursAffichage = <span class="cn">null</span>;   <span class="cc">// ex: ['Lundi','Mardi',...]</span>
+
+    <span class="hl-line"><span class="ca">#[ORM\OneToMany(targetEntity: PlageHoraire::class, mappedBy: </span><span class="cs">'presentation'</span><span class="ca">)]</span>  <span class="cc">// (5)</span></span>
+    <span class="ck">private</span> Collection $plagesHoraires;
+}</div>
+
+                        <div class="trace-legend">
+                            <div class="leg-item"><span class="leg-box lb-blue">1</span> Clé primaire auto-générée</div>
+                            <div class="leg-item"><span class="leg-box lb-green">2</span> Groupe de sérialisation JSON</div>
+                            <div class="leg-item"><span class="leg-box lb-orange">3</span> Relation ManyToOne → Programme</div>
+                            <div class="leg-item"><span class="leg-box lb-red">4</span> Relation OneToMany → Article (pages du diaporama)</div>
+                            <div class="leg-item"><span class="leg-box lb-purple">5</span> Relation OneToMany → PlageHoraire (créneaux d'affichage)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="divider">
+
+                <!-- Description générale de la trace -->
+                <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">Description de la trace T-1</p>
+                <p style="font-size:0.87rem;">
+                    La trace T-1 montre la classe d'entité <code>Presentation</code> de l'API Symfony (projet
+                    <code>diffusion_tv.api</code>). Une <em>Présentation</em> représente un diaporama planifié que
+                    les écrans TV afficheront selon un programme donné, sur des jours et des plages horaires définis.
+                    Elle est l'entité centrale de l'application : toute diffusion de contenu passe par la création
+                    d'une présentation, qui contient plusieurs <em>Articles</em> (pages à afficher) et est rattachée
+                    à un <em>Programme</em> (groupement de présentations suivi par un ou plusieurs écrans).
+                    Les annotations <code>#[Groups]</code> contrôlent quels champs sont exposés dans les réponses JSON
+                    de l'API, selon le contexte de sérialisation.
+                </p>
+
+                <hr class="divider">
+
+                <!-- Description des savoir-faire -->
+                <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Description des savoir-faire élémentaires</p>
+
+                <p style="font-size:0.87rem;">
+                    <span class="hl-db">Créer des entités PHP annotées avec Doctrine ORM</span> : la trace T-1 illustre
+                    comment j'ai déclaré chaque attribut de l'entité via des attributs PHP natifs (<code>#[ORM\Column]</code>,
+                    <code>#[ORM\Id]</code>…). J'ai utilisé ce savoir-faire pour l'ensemble des entités du projet :
+                    <code>Presentation</code>, <code>Article</code>, <code>Programme</code>, <code>Tv</code>,
+                    <code>User</code>, <code>PlageHoraire</code> et <code>ProgrammeSite</code>. Ce savoir-faire,
+                    vu en cours de développement web à l'IUT, a été approfondi en consultant la documentation
+                    Symfony/Doctrine et en l'appliquant à un modèle métier réel.
+                </p>
+                <p style="font-size:0.87rem;">
+                    <span class="hl-db">Définir des relations entre entités</span> : les marqueurs <span class="pt-orange">(3)</span>,
+                    <span class="pt-red">(4)</span> et <span class="pt-purple">(5)</span> de la trace T-1 montrent les trois
+                    types de relations utilisés dans le projet. La relation <code>ManyToOne</code> vers
+                    <code>Programme</code> traduit qu'une présentation appartient à un programme. La relation
+                    <code>OneToMany</code> vers <code>Article</code> traduit qu'une présentation est composée de
+                    plusieurs pages. J'ai dû comprendre la notion de côté propriétaire (<em>owning side</em>)
+                    pour éviter les erreurs de persistance, ce qui n'avait été qu'effleuré en cours.
+                </p>
+                <p style="font-size:0.87rem;">
+                    <span class="hl-dev">Utiliser les groupes de sérialisation Symfony</span> : le marqueur
+                    <span class="pt-blue">(2)</span> montre l'annotation <code>#[Groups(['presentation:read'])]</code>.
+                    J'ai utilisé ce mécanisme pour contrôler finement quels champs sont sérialisés dans les réponses JSON,
+                    évitant ainsi les références circulaires (par exemple, ne pas inclure l'intégralité de l'objet
+                    <code>User</code> dans chaque présentation). Ce savoir-faire était nouveau pour moi et a été appris
+                    entièrement lors du stage.
+                </p>
+            </div>
+        </div>
+
+        <!-- ===== TRACE 2 : API REST ===== -->
+        <div id="t2" class="tab-panel">
+            <div class="card">
+                <div class="card-title"><span class="icon">🔌</span> Trace T-2 : Contrôleur API REST — Opérations CRUD sur les présentations</div>
+
+                <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">Savoir-faire élémentaires abordés :</p>
+                <div class="skills-row">
+                    <span class="skill s-dev">Implémenter les endpoints CRUD d'une ressource REST</span>
+                    <span class="skill s-dev">Retourner des réponses JSON typées (codes HTTP)</span>
+                    <span class="skill s-dev">Documenter l'API avec les attributs OpenAPI</span>
+                    <span class="skill s-db">Persister des données via l'EntityManager Doctrine</span>
+                </div>
+
+                <div class="trace-wrap">
+                    <div class="trace-label">
+                        <span class="trace-num">T-2</span>
+                        <span class="trace-title-text">Méthodes <code>create</code> et <code>update</code> du <code>PresentationController</code> API</span>
+                    </div>
+                    <div class="trace-body">
+                        <div class="img-placeholder">
+                            <img src="image.png" alt="Capture du PresentationController.php avec les routes REST et la documentation OpenAPI">
+                            <br>[ Capture : PresentationController.php — méthodes create et update avec attributs OpenAPI ]
+                        </div>
+
+                        <div class="code-block"><span class="hl-line"><span class="ca">#[Route(</span><span class="cs">'/api/'</span><span class="ca">, name: </span><span class="cs">'app_api_'</span><span class="ca">)]</span>                                  <span class="cc">// (1)</span></span>
+<span class="ck">final class</span> <span class="cm">PresentationController</span> <span class="ck">extends</span> AbstractController
+{
+    <span class="ck">public function</span> <span class="cm">__construct</span>(
+        <span class="ck">private</span> PresentationRepository $presentationRepository,
+        <span class="ck">private</span> EntityManagerInterface $entityManager,
+    ) {}
+
+    <span class="hl-line"><span class="ca">#[Route(</span><span class="cs">'presentations'</span><span class="ca">, methods: [</span><span class="cs">'POST'</span><span class="ca">])]</span>                    <span class="cc">// (2)</span></span>
+    <span class="ca">#[OA\Tag(name: </span><span class="cs">'Presentation'</span><span class="ca">)]</span>
+    <span class="hl-line"><span class="ca">#[OA\RequestBody(required: true, content: new OA\JsonContent(...))]</span>  <span class="cc">// (3)</span></span>
+    <span class="ck">public function</span> <span class="cm">create</span>(Request $request, UserRepository $userRepository): JsonResponse
+    {
+        $data = json_decode($request->getContent(), <span class="cn">true</span>) ?? [];
+
+        $presentation = <span class="ck">new</span> Presentation();
+        <span class="hl-line"><span class="ck">if</span> (array_key_exists(<span class="cs">'nomPresentation'</span>, $data)) {</span>
+            $presentation->setNomPresentation($data[<span class="cs">'nomPresentation'</span>]);
+        }
+        <span class="hl-line"><span class="ck">if</span> (array_key_exists(<span class="cs">'programme'</span>, $data) && is_numeric($data[<span class="cs">'programme'</span>])) {</span>
+            $programme = $this->entityManager->getRepository(Programme::class)
+                ->find((<span class="ck">int</span>) $data[<span class="cs">'programme'</span>]);
+            <span class="hl-line"><span class="ck">if</span> ($programme) { $presentation->setProgramme($programme); }</span>
+        }
+        $presentation->setDateCreation(<span class="ck">new</span> \<span class="cm">DateTime</span>());
+
+        <span class="hl-line">$this->entityManager-><span class="cm">persist</span>($presentation);   <span class="cc">// (4)</span></span>
+        <span class="hl-line">$this->entityManager-><span class="cm">flush</span>();</span>
+
+        <span class="hl-line"><span class="ck">return</span> $this-><span class="cm">json</span>($presentation, <span class="cn">201</span>, [], [<span class="cs">'groups'</span> => [<span class="cs">'presentation:read'</span>]]);  <span class="cc">// (5)</span></span>
+    }
+}</div>
+
+                        <div class="trace-legend">
+                            <div class="leg-item"><span class="leg-box lb-blue">1</span> Préfixe de route pour toutes les méthodes du controller</div>
+                            <div class="leg-item"><span class="leg-box lb-green">2</span> Route POST REST + méthode HTTP contrainte</div>
+                            <div class="leg-item"><span class="leg-box lb-orange">3</span> Documentation OpenAPI (Swagger) du corps de requête</div>
+                            <div class="leg-item"><span class="leg-box lb-red">4</span> Persistance de l'entité via EntityManager Doctrine</div>
+                            <div class="leg-item"><span class="leg-box lb-purple">5</span> Réponse JSON 201 Created avec groupe de sérialisation</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="divider">
+
+                <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">Description de la trace T-2</p>
+                <p style="font-size:0.87rem;">
+                    La trace T-2 montre un extrait du <code>PresentationController</code> de l'API, qui expose
+                    les opérations CRUD sur la ressource <em>Presentation</em>. Ce contrôleur est typique de
+                    l'architecture de l'API : chaque ressource (<code>Tv</code>, <code>Programme</code>,
+                    <code>Article</code>…) dispose d'un contrôleur dédié avec ses cinq endpoints standard
+                    (<code>GET all</code>, <code>GET one</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code>).
+                    Ce contrôleur est appelé par le front-end web via le service <code>CallApiService</code>
+                    à chaque fois qu'un administrateur crée ou modifie une présentation dans l'interface.
+                </p>
+
+                <hr class="divider">
+
+                <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Description des savoir-faire élémentaires</p>
+
+                <p style="font-size:0.87rem;">
+                    <span class="hl-dev">Implémenter les endpoints CRUD d'une ressource REST</span> : les marqueurs
+                    <span class="pt-blue">(1)</span> et <span class="pt-green">(2)</span> de la trace T-2 montrent
+                    comment j'ai déclaré les routes avec les méthodes HTTP appropriées
+                    (<code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code>).
+                    J'ai implémenté ce pattern pour toutes les entités du projet. La conception "resource-oriented" de
+                    l'API (une URL pour une ressource, un verbe HTTP pour l'action) était vue sommairement en cours ;
+                    c'est lors du stage que j'ai vraiment compris et appliqué les conventions REST.
+                </p>
+                <p style="font-size:0.87rem;">
+                    <span class="hl-dev">Retourner des réponses JSON typées</span> : le marqueur <span class="pt-purple">(5)</span>
+                    montre le retour d'un <code>JsonResponse</code> avec le code HTTP 201 (Created) et le groupe
+                    de sérialisation approprié. J'ai veillé à utiliser les codes HTTP sémantiquement corrects
+                    (200, 201, 204, 404…) pour chaque opération. La gestion cohérente des codes de retour est un
+                    savoir-faire que j'ai entièrement développé lors du stage.
+                </p>
+                <p style="font-size:0.87rem;">
+                    <span class="hl-db">Persister des données via l'EntityManager</span> : les marqueurs
+                    <span class="pt-red">(4)</span> montrent la séquence <code>persist()</code> / <code>flush()</code>
+                    de Doctrine, nécessaire pour enregistrer les données en base. J'ai appris à distinguer
+                    l'opération de <em>persistance</em> (marquer l'entité comme à sauvegarder) du
+                    <em>flush</em> (déclencher réellement les requêtes SQL), ce qui m'a permis d'optimiser
+                    certaines opérations en lot (ex : suppression en cascade des articles d'une présentation).
+                </p>
+            </div>
+        </div>
+
+        <!-- ===== TRACE 3 : AUTHENTIFICATION AZURE AD ===== -->
+        <div id="t3" class="tab-panel">
+            <div class="card">
+                <div class="card-title"><span class="icon">🔐</span> Trace T-3 : Authentification Azure Active Directory — Symfony Security</div>
+
+                <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">Savoir-faire élémentaires abordés :</p>
+                <div class="skills-row">
+                    <span class="skill s-archi">Implémenter un Authenticator Symfony personnalisé</span>
+                    <span class="skill s-archi">Intégrer OAuth2 / OpenID Connect (Azure AD)</span>
+                    <span class="skill s-dev">Gérer les rôles utilisateurs dynamiquement depuis l'API</span>
+                    <span class="skill s-archi">Séparer l'authentification du mécanisme de sessions PHP</span>
+                </div>
+
+                <div class="trace-wrap">
+                    <div class="trace-label">
+                        <span class="trace-num">T-3</span>
+                        <span class="trace-title-text">Méthode <code>authenticate()</code> dans <code>AzureAuthenticator.php</code></span>
+                    </div>
+                    <div class="trace-body">
+                        <div class="img-placeholder">
+                            <img src="image.png" alt="Capture de AzureAuthenticator.php montrant le flux d'authentification OAuth2 Azure AD">
+                            <br>[ Capture : AzureAuthenticator.php — flux OAuth2 Azure AD avec récupération des rôles depuis l'API ]
+                        </div>
+
+                        <div class="code-block"><span class="hl-line"><span class="ck">class</span> <span class="cm">AzureAuthenticator</span> <span class="ck">extends</span> AbstractAuthenticator   <span class="cc">// (1)</span></span>
+{
+    <span class="ck">public function</span> <span class="cm">authenticate</span>(Request $request): Passport
+    {
+        <span class="cc">// Mode développement : simuler un utilisateur sans Azure</span>
+        <span class="hl-line"><span class="ck">if</span> ($this->kernel-><span class="cm">getEnvironment</span>() === <span class="cs">'dev'</span>) {           <span class="cc">// (2)</span></span>
+            $azureUserId = <span class="cs">'admin_1'</span>;
+            <span class="cc">/* ... création d'un utilisateur de test ... */</span>
+        }
+
+        <span class="cc">// Production : récupérer le token OAuth2 Azure</span>
+        <span class="hl-line">$client = $this->clientRegistry-><span class="cm">getClient</span>(<span class="cs">'azure'</span>);        <span class="cc">// (3)</span></span>
+        $token   = $client-><span class="cm">getAccessToken</span>();
+        $userData = $this->azureGraphService-><span class="cm">getUserByID</span>(
+            $client-><span class="cm">fetchUserFromToken</span>($token)-><span class="cm">getId</span>()
+        );
+
+        <span class="cc">// Vérification des champs obligatoires (id, mail, employeeId…)</span>
+        <span class="hl-line">$dbUser = $this->callApiService-><span class="cm">getDataFromApi</span>(           <span class="cc">// (4)</span></span>
+            <span class="cs">'GET'</span>, <span class="cs">'users/uid/'</span> . rawurlencode($azureUserId), <span class="cn">null</span>
+        );
+        <span class="hl-line">$roles  = $dbUser[<span class="cs">'roles'</span>] ?? [];                              <span class="cc">// (5)</span></span>
+
+        <span class="hl-line"><span class="ck">if</span> ($this-><span class="cm">isSuperAdmin</span>($userData[<span class="cs">'mail'</span>])) {</span>
+            $roles[] = <span class="cs">'ROLE_SUPER_ADMIN'</span>;
+        }
+
+        <span class="hl-line"><span class="ck">return new</span> <span class="cm">SelfValidatingPassport</span>(                          <span class="cc">// (6)</span></span>
+            <span class="ck">new</span> <span class="cm">UserBadge</span>($azureUser-><span class="cm">getUserIdentifier</span>(), ...)
+        );
+    }
+}</div>
+
+                        <div class="trace-legend">
+                            <div class="leg-item"><span class="leg-box lb-blue">1</span> Classe héritant de l'interface Symfony Authenticator</div>
+                            <div class="leg-item"><span class="leg-box lb-green">2</span> Mode dev : contourne Azure pour les tests locaux</div>
+                            <div class="leg-item"><span class="leg-box lb-orange">3</span> Récupération du token OAuth2 via le client KnpOAuth2</div>
+                            <div class="leg-item"><span class="leg-box lb-red">4</span> Appel API interne pour vérifier l'utilisateur en base</div>
+                            <div class="leg-item"><span class="leg-box lb-purple">5</span> Récupération des rôles métier depuis la BDD (pas depuis Azure)</div>
+                            <div class="leg-item" style="flex-basis:100%"><span class="leg-box lb-blue">6</span> Retour du Passport Symfony (jeton d'authentification validé)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="divider">
+
+                <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">Description de la trace T-3</p>
+                <p style="font-size:0.87rem;">
+                    La trace T-3 montre le cœur du système d'authentification de l'interface web.
+                    L'application ne gère pas ses propres mots de passe : les utilisateurs se connectent
+                    via leur compte <strong>Microsoft Azure Active Directory</strong> (SSO de la Fondation),
+                    ce qui garantit la cohérence avec le système d'information existant. Cette trace est
+                    placée dans le cadre du sujet car l'accès sécurisé à l'outil est une contrainte
+                    non-fonctionnelle essentielle : sans elle, n'importe qui pourrait modifier les
+                    diffusions sur les écrans.
+                </p>
+
+                <hr class="divider">
+
+                <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Description des savoir-faire élémentaires</p>
+
+                <p style="font-size:0.87rem;">
+                    <span class="hl-archi">Implémenter un Authenticator Symfony personnalisé</span> : le marqueur
+                    <span class="pt-blue">(1)</span> montre que j'ai créé une classe implémentant l'interface
+                    <code>AbstractAuthenticator</code> de Symfony Security. J'ai dû comprendre le cycle de vie
+                    de l'authentification Symfony (méthodes <code>supports()</code>, <code>authenticate()</code>,
+                    <code>onAuthenticationSuccess()</code>), un concept que je n'avais jamais rencontré en cours.
+                    Ce savoir-faire a été entièrement appris lors du stage, en s'appuyant sur la documentation
+                    officielle Symfony.
+                </p>
+                <p style="font-size:0.87rem;">
+                    <span class="hl-archi">Intégrer OAuth2 avec Azure AD</span> : les marqueurs
+                    <span class="pt-green">(2)</span> et <span class="pt-orange">(3)</span> de la trace T-3 montrent
+                    la gestion du double contexte (développement vs. production) et l'utilisation du bundle
+                    <code>KnpOAuth2ClientBundle</code> pour récupérer le token Azure. J'ai dû comprendre le flux
+                    Authorization Code d'OAuth2, configurer les redirections et gérer les données retournées par
+                    l'API Microsoft Graph pour extraire le profil utilisateur. C'est le savoir-faire le plus avancé
+                    de ce stage, découvert et maîtrisé entièrement en autonomie.
+                </p>
+                <p style="font-size:0.87rem;">
+                    <span class="hl-dev">Gérer les rôles dynamiquement depuis l'API</span> : les marqueurs
+                    <span class="pt-red">(4)</span> et <span class="pt-purple">(5)</span> montrent une décision
+                    architecturale importante : les rôles (<code>ROLE_ADMIN</code>, <code>ROLE_SUPER_ADMIN</code>…)
+                    ne sont pas stockés dans Azure AD mais dans la base de données de l'API. Ainsi, un administrateur
+                    peut changer les droits d'un utilisateur sans intervention sur Azure, simplement depuis l'interface.
+                </p>
+            </div>
+        </div>
+
+        <!-- ===== BILAN / ANALYSE ===== -->
+        <div id="tbilan" class="tab-panel">
+            <div class="card">
+                <div class="card-title"><span class="icon">📊</span> Bilan &amp; Analyse — Savoir-faire généraux techniques</div>
+                <p style="font-size:0.87rem;margin-bottom:1rem;">
+                    Les trois traces précédentes illustrent des savoir-faire élémentaires associés à trois
+                    savoir-faire généraux. Voici une évaluation justifiée de mon niveau d'expertise pour chacun,
+                    en comparant avant et après le stage.
+                </p>
+
+                <!-- SF 1 -->
+                <div class="exp-block">
+                    <div class="exp-head">
+                        <div class="exp-name">Savoir développer une API REST avec Symfony</div>
+                        <span class="exp-lvl lvl-bon">Bon</span>
+                    </div>
+                    <div class="exp-bar-wrap">
+                        <div class="exp-bar-fill" style="width:68%"></div>
+                    </div>
+                    <p class="exp-compare">
+                        <strong>Savoir-faire élémentaires :</strong> définir des routes REST avec les verbes HTTP,
+                        implémenter des opérations CRUD via les contrôleurs, retourner des réponses JSON avec les
+                        codes HTTP appropriés, documenter avec OpenAPI (traces T-1, T-2).<br>
+                        <strong>Contexte d'apprentissage :</strong> vu partiellement en cours (R3.01 Web, R4.01 Archi)
+                        sur des projets académiques sans vraie API REST. Approfondi et maîtrisé lors du stage
+                        sur un projet réel multi-entités.<br>
+                        <strong>Avant le stage :</strong> débutant (projets web simples sans REST).
+                        <strong>Après :</strong> <em>bon</em> — je suis autonome pour concevoir et implémenter une API REST
+                        complète, bien que je doive encore progresser sur les aspects sécurité avancée et pagination.
+                    </p>
+                </div>
+
+                <!-- SF 2 -->
+                <div class="exp-block">
+                    <div class="exp-head">
+                        <div class="exp-name">Savoir concevoir un modèle de données objet-relationnel (ORM)</div>
+                        <span class="exp-lvl lvl-bon">Bon</span>
+                    </div>
+                    <div class="exp-bar-wrap">
+                        <div class="exp-bar-fill" style="width:65%"></div>
+                    </div>
+                    <p class="exp-compare">
+                        <strong>Savoir-faire élémentaires :</strong> créer des entités Doctrine avec annotations PHP,
+                        définir les relations (ManyToOne, OneToMany, ManyToMany), utiliser les groupes de sérialisation,
+                        générer et appliquer des migrations (trace T-1).<br>
+                        <strong>Contexte d'apprentissage :</strong> les relations entre tables étaient vues en BDD SQL
+                        en cours (R2.06), mais le mapping objet-relationnel via Doctrine était nouveau. Appris
+                        lors du stage avec la documentation Doctrine et des exemples.<br>
+                        <strong>Avant :</strong> intermédiaire (connaissais SQL, pas l'ORM).
+                        <strong>Après :</strong> <em>bon</em> — je maîtrise la conception d'un modèle Doctrine
+                        pour un contexte métier réel, y compris les relations bidirectionnelles.
+                    </p>
+                </div>
+
+                <!-- SF 3 -->
+                <div class="exp-block">
+                    <div class="exp-head">
+                        <div class="exp-name">Savoir implémenter une authentification OAuth2 / SSO dans une application web</div>
+                        <span class="exp-lvl lvl-inter">Intermédiaire</span>
+                    </div>
+                    <div class="exp-bar-wrap">
+                        <div class="exp-bar-fill" style="width:45%"></div>
+                    </div>
+                    <p class="exp-compare">
+                        <strong>Savoir-faire élémentaires :</strong> implémenter un Authenticator Symfony,
+                        intégrer OAuth2/OpenID Connect via Azure AD, gérer des rôles dynamiques depuis une base de données (trace T-3).<br>
+                        <strong>Contexte d'apprentissage :</strong> sujet jamais abordé en cours, entièrement découvert
+                        lors du stage. L'intégration Azure AD impliquait de comprendre le protocole OAuth2, les tokens
+                        JWT et l'API Microsoft Graph.<br>
+                        <strong>Difficulté :</strong> élevée (nouveauté totale, peu d'exemples concrets disponibles).<br>
+                        <strong>Avant :</strong> débutant (authentification classique login/mdp seulement).
+                        <strong>Après :</strong> <em>intermédiaire</em> — je comprends et j'ai implémenté le flux complet
+                        OAuth2 avec Azure, mais des aspects comme le refresh token ou l'utilisation de JWT restent à approfondir.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<script>
+function showTab(id) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+}
+</script>
+</body>
+</html>

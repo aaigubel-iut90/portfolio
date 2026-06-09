@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Arthur Aigubelle | Intégration en entreprise</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== EN-TÊTE (toujours visible) ===== -->
+<header class="site-header">
+    <span class="hdr-name">Aigubelle Arthur</span>
+    <span class="hdr-sep">|</span>
+    <span class="hdr-email">arthur.aigubelle@gmail.com</span>
+    <div class="hdr-right">
+        <span class="hdr-badge">BUT Informatique — 2ème année</span>
+        <span class="hdr-badge accent">IUT Belfort-Montbéliard</span>
+    </div>
+</header>
+
+<div class="layout">
+
+    <!-- NAVIGATION PRINCIPALE -->
+    <nav class="sidebar">
+        <div class="sidebar-logo">
+            <div class="sidebar-logo-title">Portfolio</div>
+            <div class="sidebar-logo-name">Arthur Aigubelle</div>
+        </div>
+        <span class="nav-label">Navigation</span>
+        <a href="index.html" class="nav-link">
+            <span class="nav-icon">🏠</span> Accueil
+        </a>
+        <a href="technique.html" class="nav-link">
+            <span class="nav-icon">⚙️</span> Technique
+        </a>
+        <a href="suivi-projet.html" class="nav-link">
+            <span class="nav-icon">📋</span> Suivi de projet
+        </a>
+        <a href="integration.html" class="nav-link active">
+            <span class="nav-icon">🤝</span> Intégration en entreprise
+        </a>
+    </nav>
+
+    <!-- CONTENU -->
+    <main class="main">
+
+        <div class="page-header">
+            <div class="page-title">🤝 Intégration en entreprise</div>
+            <p class="page-sub">
+                Cette section présente les savoir-faire liés au travail en environnement professionnel.
+                Deux traces illustrent l'intégration dans l'équipe projet de la Fondation Pluriel et
+                la capacité à agir en autonomie tout en rendant compte de l'avancement. Le bilan
+                évalue le niveau atteint dans ces savoir-faire généraux.
+            </p>
+        </div>
+
+        <!-- NAVIGATION SOUS-PAGES -->
+        <div class="subpage-nav">
+            <button class="tab-btn active" onclick="showTab('i1')">Trace 1 · Intégration dans l'équipe</button>
+            <button class="tab-btn" onclick="showTab('i2')">Trace 2 · Autonomie &amp; Propositions</button>
+            <button class="tab-btn" onclick="showTab('ibilan')">Bilan &amp; Analyse</button>
+        </div>
+
+        <!-- ===== TRACE 1 : INTÉGRATION ÉQUIPE ===== -->
+        <div id="i1" class="tab-panel active">
+            <div class="card">
+                <div class="card-title"><span class="icon">👥</span> Trace I-1 : Intégration dans l'équipe projet — Contexte de travail et interactions</div>
+
+                <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">Savoir-faire élémentaires abordés :</p>
+                <div class="skills-row">
+                    <span class="skill s-company">S'intégrer dans un service et une équipe professionnelle</span>
+                    <span class="skill s-company">Communiquer avec des interlocuteurs de niveaux différents</span>
+                    <span class="skill s-company">S'informer du contexte général du sujet avant de commencer</span>
+                    <span class="skill s-company">Participer aux réunions de suivi et compte rendu d'avancement</span>
+                </div>
+
+                <div class="trace-wrap">
+                    <div class="trace-label">
+                        <span class="trace-num">I-1</span>
+                        <span class="trace-title-text">Cartographie des interactions au sein de l'équipe projet Fondation Pluriel</span>
+                    </div>
+                    <div class="trace-body">
+                        <div class="img-placeholder">
+                            <img src="image.png" alt="Photo ou schéma illustrant le bureau de travail, ou une réunion d'équipe avec l'équipe projet">
+                            <br>[ Photo/schéma : environnement de travail ou réunion avec l'équipe projet Fondation Pluriel ]
+                        </div>
+
+                        <!-- Tableau des interactions -->
+                        <p style="font-size:0.8rem;font-weight:700;color:var(--navy);margin:0.4rem 0;">Interlocuteurs principaux et nature des échanges :</p>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Interlocuteur</th>
+                                    <th>Rôle</th>
+                                    <th>Nature des échanges <span class="skill s-company" style="font-size:.7rem">(légende)</span></th>
+                                    <th>Fréquence</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Frédéric Coffinières</strong></td>
+                                    <td>Tuteur / Expert technique</td>
+                                    <td><span class="skill s-company" style="font-size:.72rem">(1)</span> Revues de code, aide technique, validation des choix d'implémentation</td>
+                                    <td>Quotidienne</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sylvie Ramasso</strong></td>
+                                    <td>Cheffe de projet</td>
+                                    <td><span class="skill s-company" style="font-size:.72rem">(2)</span> Points d'avancement, arbitrage fonctionnel, présentation des développements</td>
+                                    <td>Hebdomadaire</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Hélène Clog</strong></td>
+                                    <td>Gestionnaire de projet</td>
+                                    <td><span class="skill s-company" style="font-size:.72rem">(3)</span> Questions fonctionnelles, tests utilisateurs, validation des livrables</td>
+                                    <td>Bi-hebdomadaire</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Candice Bourgeois</strong></td>
+                                    <td>Responsable communication</td>
+                                    <td><span class="skill s-company" style="font-size:.72rem">(4)</span> Besoins de la communication institutionnelle, validation des types de contenu</td>
+                                    <td>Ponctuelle</td>
+                                </tr>
+                                <tr>
+                                    <td>Responsables de pôles</td>
+                                    <td>Utilisateurs finaux</td>
+                                    <td><span class="skill s-company" style="font-size:.72rem">(5)</span> Retours sur les besoins spécifiques (lors des réunions projet)</td>
+                                    <td>Occasionnelle</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <br>
+                        <p style="font-size:0.8rem;font-weight:700;color:var(--navy);margin-bottom:0.3rem;">Contexte de l'environnement de travail :</p>
+                        <div class="grid-2">
+                            <div>
+                                <div class="info-row">
+                                    <span class="info-row-label">Service</span>
+                                    <span class="info-row-val">Direction Développement et Performance</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-row-label">Lieu</span>
+                                    <span class="info-row-val">Site de la Fondation Pluriel — région Montbéliard</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-row-label">Équipe SI</span>
+                                    <span class="info-row-val">Petite équipe : 2 responsables intégration + 1 développeur</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="info-row">
+                                    <span class="info-row-label">Outils comm.</span>
+                                    <span class="info-row-val">Microsoft Teams, messagerie Outlook, réunions en présentiel</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-row-label">Méthode</span>
+                                    <span class="info-row-val">Gestion de projet classique avec points réguliers et livrables</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-row-label">Durée</span>
+                                    <span class="info-row-val">Stage de 10 semaines (BUT2 S4)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="trace-legend">
+                            <div class="leg-item"><span class="leg-box lb-blue">1</span> Relation technique quotidienne (encadrant direct)</div>
+                            <div class="leg-item"><span class="leg-box lb-green">2</span> Pilotage fonctionnel (décisions, priorisation)</div>
+                            <div class="leg-item"><span class="leg-box lb-orange">3</span> Validation et tests (livraison progressive)</div>
+                            <div class="leg-item"><span class="leg-box lb-red">4</span> Besoins métier communication (vision institutionnelle)</div>
+                            <div class="leg-item"><span class="leg-box lb-purple">5</span> Retours terrain utilisateurs finaux</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="divider">
+
+                <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">Description de la trace I-1</p>
+                <p style="font-size:0.87rem;">
+                    La trace I-1 présente la cartographie des échanges professionnels tout au long du stage.
+                    La Fondation Pluriel est une organisation de taille significative (2 000 professionnels,
+                    69 sites), mais mon intégration s'est faite dans une petite équipe SI très soudée.
+                    L'outil développé concernait de nombreux pôles (voir cahier des charges, trace S-1),
+                    ce qui m'a amené à interagir avec des interlocuteurs très différents :
+                    des développeurs (Frédéric), des responsables de projet (Sylvie, Hélène),
+                    une responsable communication (Candice) et des responsables de pôle utilisateurs finaux.
+                    Cette diversité a été une expérience d'intégration riche, qui m'a appris à adapter
+                    mon discours selon l'interlocuteur.
+                </p>
+
+                <hr class="divider">
+
+                <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Description des savoir-faire élémentaires</p>
+
+                <p style="font-size:0.87rem;">
+                    <span class="hl-company">S'intégrer dans une équipe professionnelle</span> : dès la première semaine,
+                    j'ai été intégré aux rituels de l'équipe (points hebdomadaires, utilisation de Teams, accès aux
+                    outils internes). Le marqueur <span class="pt-blue">(1)</span> traduit la relation quotidienne
+                    avec mon tuteur technique Frédéric, qui validait mes avancées et m'orientait sur les bonnes
+                    pratiques du code. Me fondre dans une équipe existante, avec ses habitudes et ses contraintes,
+                    m'a demandé un effort d'adaptation que je n'avais pas eu à fournir lors de projets académiques.
+                </p>
+                <p style="font-size:0.87rem;">
+                    <span class="hl-company">Communiquer avec des interlocuteurs de niveaux différents</span> : les marqueurs
+                    <span class="pt-green">(2)</span> et <span class="pt-orange">(3)</span> illustrent que j'ai dû
+                    adapter mon niveau de langage : technique avec Frédéric (termes Symfony, Doctrine, API REST…),
+                    plus fonctionnel avec Sylvie et Hélène (résultats, délais, limites), et encore plus accessible
+                    avec les responsables de pôles qui n'ont pas de culture informatique. Ce savoir-faire n'est
+                    pas enseigné en cours sous cette forme ; il s'acquiert dans l'expérience.
+                </p>
+                <p style="font-size:0.87rem;">
+                    <span class="hl-company">Participer aux réunions de suivi</span> : lors des points hebdomadaires
+                    avec Sylvie, je présentais mes avancées, les difficultés rencontrées et le plan pour la semaine
+                    suivante. Préparer ces points m'a appris à synthétiser mon travail technique en langage compréhensible
+                    par des non-développeurs, une compétence transversale essentielle dans un environnement professionnel.
+                </p>
+            </div>
+        </div>
+
+        <!-- ===== TRACE 2 : AUTONOMIE ===== -->
+        <div id="i2" class="tab-panel">
+            <div class="card">
+                <div class="card-title"><span class="icon">🚀</span> Trace I-2 : Autonomie et force de proposition — Exemple de décisions techniques prises en autonomie</div>
+
+                <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">Savoir-faire élémentaires abordés :</p>
+                <div class="skills-row">
+                    <span class="skill s-company">Agir en autonomie de façon mesurée (sans dépasser son périmètre)</span>
+                    <span class="skill s-company">Proposer et argumenter des solutions techniques face à un problème</span>
+                    <span class="skill s-company">Rendre compte de ses choix et avancées à son responsable</span>
+                    <span class="skill s-archi">Rechercher et évaluer des solutions techniques (documentation, POC)</span>
+                </div>
+
+                <div class="trace-wrap">
+                    <div class="trace-label">
+                        <span class="trace-num">I-2</span>
+                        <span class="trace-title-text">Journal de décisions techniques prises en autonomie lors du stage</span>
+                    </div>
+                    <div class="trace-body">
+                        <div class="img-placeholder">
+                            <img src="image.png" alt="Capture d'écran d'un échange Teams ou d'une note présentant une décision technique à la cheffe de projet">
+                            <br>[ Capture : exemple de présentation d'une décision technique à la cheffe de projet (Teams / note) ]
+                        </div>
+
+                        <p style="font-size:0.8rem;font-weight:700;color:var(--navy);margin:0.4rem 0;">Décisions techniques majeures prises en autonomie :</p>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th style="width:30%">Décision</th>
+                                    <th style="width:35%">Problème rencontré</th>
+                                    <th>Solution proposée et argumentée <span class="skill s-company" style="font-size:.7rem">(légende)</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Architecture bi-applicative API/Web</strong></td>
+                                    <td>La TV et l'interface admin ont des besoins d'accès très différents</td>
+                                    <td><span class="skill s-company" style="font-size:.72rem">(1)</span> Proposer deux Symfony distincts plutôt qu'un monolithe — permet la réutilisabilité de l'API</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Choix de l'authentification Azure AD</strong></td>
+                                    <td>Comment sécuriser l'accès sans gérer des mots de passe séparément</td>
+                                    <td><span class="skill s-company" style="font-size:.72rem">(2)</span> Intégrer le SSO Azure existant à la Fondation — recherche de la librairie KnpOAuth2ClientBundle et prototype de validation</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Séparation des rôles métier vs Azure</strong></td>
+                                    <td>Les droits applicatifs ne doivent pas dépendre de l'AD (plus flexibles)</td>
+                                    <td><span class="skill s-company" style="font-size:.72rem">(3)</span> Stocker les rôles en BDD applicative, les récupérer via l'API lors du login</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Gestion des médias (fichiers)</strong></td>
+                                    <td>Comment gérer des fichiers lourds (vidéos, PPT) partagés entre API et web</td>
+                                    <td><span class="skill s-company" style="font-size:.72rem">(4)</span> Stockage centralisé sur le serveur web, l'API conserve uniquement le chemin relatif</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <br>
+                        <p style="font-size:0.8rem;font-weight:700;color:var(--navy);margin-bottom:0.3rem;">Extrait d'une recherche documentaire pour l'intégration Azure AD :</p>
+                        <div class="code-block"><span class="cc">// Recherche effectuée : "Symfony OAuth2 Azure Active Directory"</span>
+<span class="cc">// Solution trouvée : knpuniversity/oauth2-client-bundle</span>
+<span class="cc">// Prototype réalisé en environnement de dev avant présentation</span>
+
+<span class="cc">// Argument présenté à la cheffe de projet :</span>
+<span class="cc">// ✓ Le SSO Azure est déjà utilisé par tous les employés</span>
+<span class="cc">// ✓ Pas de gestion de mots de passe supplémentaire</span>
+<span class="cc">// ✓ Si un employé quitte la Fondation → compte Azure désactivé → accès révoqué auto.</span>
+<span class="cc">// ✓ Coût de maintenance réduit (pas de reset password, pas de tables User locales)</span>
+
+<span class="cc">// Risque identifié et communiqué :</span>
+<span class="cc">// ⚠ Complexité de mise en place (OAuth2 flow, config Azure App Registration)</span>
+<span class="cc">// ⚠ En mode dev, le SSO Azure n'est pas disponible → prévoir un bypass (fait dans AzureAuthenticator)</span></div>
+
+                        <div class="trace-legend">
+                            <div class="leg-item"><span class="leg-box lb-blue">1</span> Décision architecturale majeure (structure du projet)</div>
+                            <div class="leg-item"><span class="leg-box lb-green">2</span> Choix d'intégration (recherche + prototype avant validation)</div>
+                            <div class="leg-item"><span class="leg-box lb-orange">3</span> Décision de conception (flexibilité vs. dépendance Azure)</div>
+                            <div class="leg-item"><span class="leg-box lb-red">4</span> Décision d'infrastructure (stockage des médias)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="divider">
+
+                <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">Description de la trace I-2</p>
+                <p style="font-size:0.87rem;">
+                    La trace I-2 présente des décisions techniques importantes que j'ai prises ou proposées en
+                    autonomie lors du stage. Être autonome ne signifie pas agir seul sans informer : pour chaque
+                    décision majeure, j'ai suivi un processus en trois étapes — (1) identifier le problème,
+                    (2) rechercher et évaluer des solutions, (3) présenter ma proposition argumentée à mon tuteur
+                    ou à la cheffe de projet avant de l'implémenter. L'extrait du code de la trace illustre
+                    concrètement comment j'ai argumenté le choix de l'intégration Azure AD, en présentant
+                    à la fois les avantages et les risques identifiés.
+                </p>
+
+                <hr class="divider">
+
+                <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Description des savoir-faire élémentaires</p>
+
+                <p style="font-size:0.87rem;">
+                    <span class="hl-company">Agir en autonomie de façon mesurée</span> : le marqueur
+                    <span class="pt-blue">(1)</span> illustre la décision architecturale la plus structurante du
+                    projet (séparation API/Web). Cette décision a été prise en autonomie après analyse des contraintes,
+                    puis soumise à validation. "Mesurée" signifie que je n'ai pas implémenté sans valider
+                    d'abord avec mon tuteur — j'ai présenté l'idée, les avantages et les risques, et attendu le
+                    feu vert. En cours, les sujets de projets imposent l'architecture ; lors du stage, j'ai
+                    dû l'inventer et l'assumer.
+                </p>
+                <p style="font-size:0.87rem;">
+                    <span class="hl-company">Proposer et argumenter des solutions techniques</span> : le marqueur
+                    <span class="pt-green">(2)</span> et l'extrait de code montrent comment j'ai présenté le choix
+                    de l'intégration Azure AD. L'argumentation incluait des avantages concrets (sécurité, maintenance),
+                    mais aussi les risques (complexité, besoin d'un bypass en dev). Proposer une solution technique
+                    à un responsable non-développeur m'a appris à choisir les bons arguments : pas techniques,
+                    mais fonctionnels et économiques.
+                </p>
+                <p style="font-size:0.87rem;">
+                    <span class="hl-archi">Rechercher et évaluer des solutions techniques</span> : chacune des
+                    décisions du tableau (marqueurs <span class="pt-blue">(1)</span> à <span class="pt-red">(4)</span>)
+                    a nécessité une phase de recherche autonome : documentation officielle Symfony, articles de blog,
+                    StackOverflow, prototypes rapides en dev. Cette démarche de recherche structurée (problème →
+                    documentation → prototype → validation) est un savoir-faire acquis lors du stage ; en cours,
+                    les solutions technologiques étaient généralement imposées.
+                </p>
+            </div>
+        </div>
+
+        <!-- ===== BILAN ===== -->
+        <div id="ibilan" class="tab-panel">
+            <div class="card">
+                <div class="card-title"><span class="icon">📊</span> Bilan &amp; Analyse — Savoir-faire généraux en intégration entreprise</div>
+                <p style="font-size:0.87rem;margin-bottom:1rem;">
+                    Les deux traces précédentes illustrent des savoir-faire liés au travail en environnement
+                    professionnel. Voici l'évaluation justifiée du niveau atteint en comparant avant et après
+                    le stage.
+                </p>
+
+                <!-- SF 1 -->
+                <div class="exp-block">
+                    <div class="exp-head">
+                        <div class="exp-name">Savoir s'intégrer dans une équipe professionnelle et communiquer avec différents interlocuteurs</div>
+                        <span class="exp-lvl lvl-bon">Bon</span>
+                    </div>
+                    <div class="exp-bar-wrap">
+                        <div class="exp-bar-fill" style="width:70%"></div>
+                    </div>
+                    <p class="exp-compare">
+                        <strong>Savoir-faire élémentaires :</strong> s'intégrer dans les rituels d'équipe,
+                        communiquer en adaptant le discours à l'interlocuteur, participer aux réunions
+                        de suivi, présenter des avancées en langage accessible (trace I-1).<br>
+                        <strong>Contexte d'apprentissage :</strong> non enseigné formellement en cours, partiellement
+                        développé lors des projets en groupe (R3.11 Projets). La différence avec l'entreprise
+                        est significative : ici les interlocuteurs ont des enjeux réels et des contraintes
+                        de temps que les projets académiques ne reproduisent pas.<br>
+                        <strong>Difficulté :</strong> moyenne — l'équipe était accueillante et le projet bien cadré,
+                        ce qui a facilité l'intégration.<br>
+                        <strong>Avant :</strong> intermédiaire (projets en groupe académiques, pas d'expérience professionnelle).
+                        <strong>Après :</strong> <em>bon</em> — je suis à l'aise pour communiquer avec différents
+                        profils (technique, fonctionnel, managérial) et pour m'inscrire dans les processus d'une équipe.
+                        Je dois encore progresser sur la communication écrite formelle (emails, comptes rendus).
+                    </p>
+                </div>
+
+                <!-- SF 2 -->
+                <div class="exp-block">
+                    <div class="exp-head">
+                        <div class="exp-name">Savoir agir en autonomie de façon mesurée et être force de proposition</div>
+                        <span class="exp-lvl lvl-bon">Bon</span>
+                    </div>
+                    <div class="exp-bar-wrap">
+                        <div class="exp-bar-fill" style="width:68%"></div>
+                    </div>
+                    <p class="exp-compare">
+                        <strong>Savoir-faire élémentaires :</strong> identifier et proposer des solutions
+                        techniques argumentées, prendre des décisions dans son périmètre, rendre compte
+                        de ses choix, rechercher des solutions en autonomie (trace I-2).<br>
+                        <strong>Contexte d'apprentissage :</strong> dans les projets académiques, le périmètre
+                        technique est imposé par le sujet. Lors du stage, j'ai eu à <em>définir</em> ce périmètre
+                        et à en assumer les conséquences, tout en restant dans un cadre validé par mon tuteur.
+                        La gestion de l'autonomie est quelque chose qui s'apprend progressivement,
+                        et ce stage a été une première expérience structurante.<br>
+                        <strong>Difficulté :</strong> modérée — la difficulté principale était de savoir
+                        quand décider seul et quand solliciter l'avis du tuteur.<br>
+                        <strong>Avant :</strong> débutant (jamais en situation d'autonomie professionnelle réelle).
+                        <strong>Après :</strong> <em>bon</em> — je suis capable d'identifier un problème,
+                        de rechercher et d'évaluer des solutions, de les proposer avec des arguments,
+                        et de les implémenter une fois validées. La "mesure" de l'autonomie (savoir quand
+                        escalader) reste un point de vigilance à développer dans de futures expériences.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<script>
+function showTab(id) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+}
+</script>
+</body>
+</html>

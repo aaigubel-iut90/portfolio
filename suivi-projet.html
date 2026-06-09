@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Arthur Aigubelle | Suivi de projet</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== EN-TÊTE (toujours visible) ===== -->
+<header class="site-header">
+    <span class="hdr-name">Aigubelle Arthur</span>
+    <span class="hdr-sep">|</span>
+    <span class="hdr-email">arthur.aigubelle@gmail.com</span>
+    <div class="hdr-right">
+        <span class="hdr-badge">BUT Informatique — 2ème année</span>
+        <span class="hdr-badge accent">IUT Belfort-Montbéliard</span>
+    </div>
+</header>
+
+<div class="layout">
+
+    <!-- NAVIGATION PRINCIPALE -->
+    <nav class="sidebar">
+        <div class="sidebar-logo">
+            <div class="sidebar-logo-title">Portfolio</div>
+            <div class="sidebar-logo-name">Arthur Aigubelle</div>
+        </div>
+        <span class="nav-label">Navigation</span>
+        <a href="index.html" class="nav-link">
+            <span class="nav-icon">🏠</span> Accueil
+        </a>
+        <a href="technique.html" class="nav-link">
+            <span class="nav-icon">⚙️</span> Technique
+        </a>
+        <a href="suivi-projet.html" class="nav-link active">
+            <span class="nav-icon">📋</span> Suivi de projet
+        </a>
+        <a href="integration.html" class="nav-link">
+            <span class="nav-icon">🤝</span> Intégration en entreprise
+        </a>
+    </nav>
+
+    <!-- CONTENU -->
+    <main class="main">
+
+        <div class="page-header">
+            <div class="page-title">📋 Suivi de projet</div>
+            <p class="page-sub">
+                Cette section présente les savoir-faire liés à la gestion et au suivi du projet de diffusion TV.
+                Deux traces illustrent la collecte et l'analyse des besoins utilisateurs (cahier des charges)
+                ainsi que la conception de l'architecture technique et l'organisation du travail avec Git.
+                Le bilan évalue le niveau atteint dans ces savoir-faire généraux.
+            </p>
+        </div>
+
+        <!-- NAVIGATION SOUS-PAGES -->
+        <div class="subpage-nav">
+            <button class="tab-btn active" onclick="showTab('s1')">Trace 1 · Analyse des besoins</button>
+            <button class="tab-btn" onclick="showTab('s2')">Trace 2 · Architecture &amp; Organisation</button>
+            <button class="tab-btn" onclick="showTab('sbilan')">Bilan &amp; Analyse</button>
+        </div>
+
+        <!-- ===== TRACE 1 : ANALYSE DES BESOINS ===== -->
+        <div id="s1" class="tab-panel active">
+            <div class="card">
+                <div class="card-title"><span class="icon">📄</span> Trace S-1 : Cahier des charges — Analyse des besoins et acteurs du projet</div>
+
+                <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">Savoir-faire élémentaires abordés :</p>
+                <div class="skills-row">
+                    <span class="skill s-project">Identifier les acteurs et les parties prenantes d'un projet</span>
+                    <span class="skill s-project">Recueillir et synthétiser les besoins métier des utilisateurs</span>
+                    <span class="skill s-project">Identifier les contraintes fonctionnelles et non-fonctionnelles</span>
+                    <span class="skill s-project">Comprendre les enjeux d'un livrable pour l'entreprise commanditaire</span>
+                </div>
+
+                <div class="trace-wrap">
+                    <div class="trace-label">
+                        <span class="trace-num">S-1</span>
+                        <span class="trace-title-text">Cahier des charges — Constitution de l'équipe projet et recensement des besoins par pôle</span>
+                    </div>
+                    <div class="trace-body">
+                        <div class="img-placeholder">
+                            <img src="image.png" alt="Capture du cahier des charges Fondation Pluriel — tableau de l'équipe projet et section besoins des utilisateurs">
+                            <br>[ Capture : tableau de l'équipe projet + extrait des besoins par pôle du cahier des charges ]
+                        </div>
+
+                        <!-- Tableau des acteurs (extrait du cahier des charges) -->
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Nom / Prénom</th>
+                                    <th>Rôle dans l'équipe projet</th>
+                                    <th>Fonction à la Fondation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>Sylvie Ramasso</strong></td><td><span class="skill s-project" style="font-size:.75rem">Chef de projet</span></td><td>Responsable intégration applications — Dir. Développement et Performance</td></tr>
+                                <tr><td><strong>Hélène Clog</strong></td><td><span class="skill s-project" style="font-size:.75rem">Gestionnaire de projet</span></td><td>Responsable intégration applications — Dir. Développement et Performance</td></tr>
+                                <tr><td><strong>Frédéric Coffinières</strong></td><td><span class="skill s-project" style="font-size:.75rem">Expert métier</span></td><td>Développeur</td></tr>
+                                <tr><td>Candice Bourgeois</td><td>Contributeur</td><td>Responsable communication</td></tr>
+                                <tr><td>Laurent Droxler</td><td>Contributeur</td><td>Directeur adjoint Industrie</td></tr>
+                                <tr><td>Jean-Luc Millot</td><td>Contributeur</td><td>Directeur DAME PM</td></tr>
+                                <tr><td>Stéphane Arnoult</td><td>Contributeur</td><td>Responsable logistique</td></tr>
+                                <tr><td>Dominique Seyller</td><td>Contributeur</td><td>Responsable agroalimentaire</td></tr>
+                                <tr><td>Alix Pages</td><td>Contributeur</td><td>Agent d'accueil</td></tr>
+                            </tbody>
+                        </table>
+
+                        <br>
+                        <!-- Extrait des besoins -->
+                        <p style="font-size:0.8rem;font-weight:700;color:var(--navy);margin:0.4rem 0;">Extrait du recensement des besoins par pôle :</p>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th style="width:30%">Pôle / Service</th>
+                                    <th>Besoins principaux identifiés</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Pôle TIP Industrie</strong> <span class="skill s-project" style="font-size:.72rem">(1)</span></td>
+                                    <td>Vidéos, fichiers PowerPoint/Word, photos — zone fixe (météo, heure) — identification couleur par type d'info — logo par site — 10'' par écran — différenciation par site</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Service communication</strong> <span class="skill s-project" style="font-size:.72rem">(2)</span></td>
+                                    <td>Contrôle sur les infos Fondation — trames standardisées — validation des contenus — panorama des TV présentes — planning partagé des événements</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>DAME PM site Lulli</strong> <span class="skill s-project" style="font-size:.72rem">(3)</span></td>
+                                    <td>Hall d'accueil : temps forts différenciés (accueil, repas, départ) + flux ordinaire (actus Fondation)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Maison des services "Les 4 saisons"</strong> <span class="skill s-project" style="font-size:.72rem">(4)</span></td>
+                                    <td>Météo hebdomadaire, animations du mois, agenda, événements ponctuels, vidéos saisonnières (actuellement PPT converti en WMV)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="trace-legend">
+                            <div class="leg-item"><span class="leg-box lb-blue">1</span> Utilisateur principale : affichage industriel (env., qualité, sécurité)</div>
+                            <div class="leg-item"><span class="leg-box lb-green">2</span> Administrateur central : harmonisation et validation des contenus</div>
+                            <div class="leg-item"><span class="leg-box lb-orange">3</span> Cas d'usage : affichage différencié selon horaires</div>
+                            <div class="leg-item"><span class="leg-box lb-red">4</span> Utilisateur final : remplacement d'un process PowerPoint/WMV manuel</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="divider">
+
+                <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">Description de la trace S-1</p>
+                <p style="font-size:0.87rem;">
+                    La trace S-1 est un extrait du cahier des charges officiel fourni par la Fondation Pluriel.
+                    Ce document est le point de départ de tout le projet : il liste les acteurs impliqués et
+                    recense les besoins de chaque pôle via des entretiens menés auparavant par la cheffe de projet.
+                    J'ai utilisé ce document comme base de référence tout au long du développement, pour m'assurer
+                    que chaque fonctionnalité développée répondait à un besoin réel. La complexité réside dans la
+                    diversité des besoins : chaque pôle a des exigences différentes, parfois contradictoires
+                    (ex : niveau de personnalisation vs. harmonisation centrale du service communication).
+                </p>
+
+                <hr class="divider">
+
+                <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Description des savoir-faire élémentaires</p>
+
+                <p style="font-size:0.87rem;">
+                    <span class="hl-project">Identifier les acteurs et parties prenantes</span> : le tableau
+                    de la trace S-1 montre 9 parties prenantes avec des rôles distincts (cheffe de projet,
+                    expert métier, contributeurs métier). J'ai compris que chaque rôle implique un niveau
+                    d'implication et des attentes différents. Les contributeurs (responsables de pôle)
+                    sont les futurs utilisateurs finaux ; les chefs de projet pilotent l'avancement ;
+                    l'expert métier est mon encadrant technique direct. Cette identification des acteurs,
+                    vue en cours de gestion de projet (R3.05), m'a permis de prioriser les fonctionnalités
+                    selon les profils d'utilisateurs.
+                </p>
+                <p style="font-size:0.87rem;">
+                    <span class="hl-project">Recueillir et synthétiser les besoins métier</span> : le tableau
+                    des besoins de la trace S-1 montre comment des besoins hétérogènes (vidéos, PowerPoint, météo,
+                    plages horaires, différenciation par site…) ont été synthétisés en fonctionnalités concrètes.
+                    Les marqueurs <span class="pt-blue">(1)</span> à <span class="pt-red">(4)</span> représentent
+                    les quatre profils d'usage principaux qui ont guidé la conception de l'application.
+                    En croisant ces besoins, j'ai défini les entités clés : <em>Présentation</em>, <em>Programme</em>,
+                    <em>Tv</em>, <em>PlageHoraire</em>. Ce travail de traduction des besoins en modèle de données
+                    est un savoir-faire partiellement vu en cours (analyse/conception), renforcé ici sur un
+                    cas réel avec des utilisateurs finaux concrets.
+                </p>
+                <p style="font-size:0.87rem;">
+                    <span class="hl-project">Identifier les contraintes non-fonctionnelles</span> : au-delà des
+                    fonctionnalités, le cahier des charges impliquait des contraintes importantes :
+                    fonctionnement sur n'importe quelle TV avec navigateur (contrainte matérielle),
+                    authentification SSO Azure AD (contrainte sécurité), administration centralisée par le
+                    service communication (contrainte organisationnelle). Ces contraintes ont directement
+                    influencé les choix d'architecture (décrit dans la trace S-2).
+                </p>
+            </div>
+        </div>
+
+        <!-- ===== TRACE 2 : ARCHITECTURE ===== -->
+        <div id="s2" class="tab-panel">
+            <div class="card">
+                <div class="card-title"><span class="icon">🏗️</span> Trace S-2 : Architecture bi-applicative et organisation du travail avec Git</div>
+
+                <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">Savoir-faire élémentaires abordés :</p>
+                <div class="skills-row">
+                    <span class="skill s-archi">Concevoir une architecture logicielle multi-tiers</span>
+                    <span class="skill s-archi">Justifier des choix techniques par rapport aux contraintes</span>
+                    <span class="skill s-project">Utiliser Git pour le versioning et la traçabilité du code</span>
+                    <span class="skill s-project">Organiser le travail en phases et en tâches progressives</span>
+                </div>
+
+                <div class="trace-wrap">
+                    <div class="trace-label">
+                        <span class="trace-num">S-2</span>
+                        <span class="trace-title-text">Schéma d'architecture bi-applicative Symfony API + Web — Organisation Git du projet</span>
+                    </div>
+                    <div class="trace-body">
+                        <div class="img-placeholder">
+                            <img src="image.png" alt="Schéma de l'architecture bi-applicative : API Symfony / Web Symfony / TV Client / Base de données">
+                            <br>[ Schéma : architecture bi-applicative avec API REST, interface web d'administration, client TV et base de données ]
+                        </div>
+
+                        <!-- Schéma ASCII de l'architecture -->
+                        <div class="archi-box">┌─────────────────────────────────────────────────────────────────────┐
+│                       SERVEUR (WampServer / Apache)                 │
+│                                                                     │
+│   ┌─────────────────────────┐    ┌──────────────────────────────┐  │
+│   │   diffusion_tv.api      │    │    diffusion_tv.web           │  │
+│   │   (Symfony 6.4 — API)   │◄──►│    (Symfony 6.4 — Interface) │  │
+│   │                         │    │                              │  │
+│   │  ┌─────────┐            │    │  ┌──────────────────────┐   │  │
+│   │  │ Entités │  Doctrine  │    │  │  CallApiService (1)  │   │  │
+│   │  │ ORM     │───────────►│    │  │  HttpClient → API    │   │  │
+│   │  └─────────┘            │    │  └──────────────────────┘   │  │
+│   │  ┌─────────────────┐    │    │  ┌────────────────────────┐ │  │
+│   │  │ Controllers REST │    │    │  │ AzureAuthenticator (2) │ │  │
+│   │  │ /api/...         │    │    │  │ OAuth2 / Azure AD      │ │  │
+│   │  └─────────────────┘    │    │  └────────────────────────┘ │  │
+│   └──────────┬──────────────┘    └──────────────────────────────┘  │
+│              │                                                      │
+│   ┌──────────▼──────────┐                                          │
+│   │   MariaDB (3)       │                                          │
+│   │   Base de données   │                                          │
+│   └─────────────────────┘                                          │
+└─────────────────────────────────────────────────────────────────────┘
+          ▲                              ▲
+          │ JSON / X-AUTH-TOKEN (4)      │ HTTPS / SSO Azure
+          │                              │
+  ┌───────┴──────┐              ┌────────┴────────┐
+  │  TV Client   │              │  Administrateur │
+  │  Navigateur  │              │  Navigateur web │
+  │  (affichage) │              │  (gestion)      │
+  └──────────────┘              └─────────────────┘</div>
+
+                        <br>
+                        <p style="font-size:0.8rem;font-weight:700;color:var(--navy);margin-bottom:0.3rem;">Organisation Git du projet :</p>
+                        <div class="archi-box">Repository Git : diffusion_tv/
+├── diffusion_tv.api/       ← Application API REST Symfony    (5)
+│   ├── src/
+│   │   ├── Controller/     ← Routes REST (TvController, PresentationController…)
+│   │   ├── Entity/         ← Entités Doctrine (Tv, Presentation, Programme…)
+│   │   ├── Repository/     ← Requêtes Doctrine personnalisées
+│   │   └── Security/       ← Authentificateur API (X-AUTH-TOKEN)
+│   └── migrations/         ← Migrations de base de données
+│
+└── diffusion_tv.web/       ← Application Web Symfony (front admin)
+    ├── src/
+    │   ├── Controller/     ← Pages web (AdminTV, AdminProgrammes…)
+    │   ├── Service/        ← CallApiService, AzureGraphService…
+    │   └── Security/       ← AzureAuthenticator (OAuth2)
+    └── templates/          ← Vues Twig (HTML / Bootstrap 5)</div>
+
+                        <div class="trace-legend">
+                            <div class="leg-item"><span class="leg-box lb-blue">1</span> Service dédié aux appels HTTP vers l'API (injection de dépendances)</div>
+                            <div class="leg-item"><span class="leg-box lb-green">2</span> Authentification SSO Fondation (Azure Active Directory)</div>
+                            <div class="leg-item"><span class="leg-box lb-orange">3</span> Base de données partagée entre les deux applications</div>
+                            <div class="leg-item"><span class="leg-box lb-red">4</span> Token d'API : sécurise les échanges API ↔ Web</div>
+                            <div class="leg-item"><span class="leg-box lb-purple">5</span> Séparation en deux projets Git indépendants dans un même repo</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="divider">
+
+                <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">Description de la trace S-2</p>
+                <p style="font-size:0.87rem;">
+                    La trace S-2 présente l'architecture générale choisie pour l'outil de diffusion TV.
+                    La décision principale a été de séparer l'application en deux projets Symfony distincts :
+                    une <strong>API REST</strong> (back-end) et une <strong>interface web</strong> (front-end d'administration).
+                    Cette architecture permet de réutiliser l'API depuis d'autres clients futurs (application mobile,
+                    autres interfaces…) et d'isoler la logique métier de l'interface utilisateur.
+                    Le schéma Git montre la structure physique du code et comment le travail a été organisé
+                    par domaine fonctionnel (entités, contrôleurs, services, templates).
+                </p>
+
+                <hr class="divider">
+
+                <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Description des savoir-faire élémentaires</p>
+
+                <p style="font-size:0.87rem;">
+                    <span class="hl-archi">Concevoir une architecture logicielle multi-tiers</span> : la trace S-2
+                    montre la décision de séparer l'API REST de l'interface web. Ce choix résulte de l'analyse
+                    des contraintes de la trace S-1 : la TV (client léger) n'accède qu'à l'API pour afficher
+                    les présentations, tandis que les administrateurs utilisent l'interface web.
+                    Le marqueur <span class="pt-blue">(1)</span> montre le <code>CallApiService</code>, qui centralise
+                    tous les appels HTTP depuis le web vers l'API, évitant de dupliquer la logique d'accès.
+                    Ce pattern d'architecture a été vu en cours d'architecture logicielle (R4.01) et mis en pratique
+                    pour la première fois sur un projet réel.
+                </p>
+                <p style="font-size:0.87rem;">
+                    <span class="hl-archi">Justifier les choix techniques par les contraintes</span> : la sécurisation
+                    de l'API par un token partagé (<code>X-AUTH-TOKEN</code>, marqueur <span class="pt-red">(4)</span>)
+                    découle de la contrainte que l'API doit être inaccessible depuis l'extérieur sans authentification.
+                    Le choix de Symfony (et non d'un framework plus léger) était justifié par la maîtrise de l'équipe
+                    et la complexité du modèle de données.
+                </p>
+                <p style="font-size:0.87rem;">
+                    <span class="hl-project">Utiliser Git pour le versioning</span> : le schéma de la trace S-2 montre
+                    la structure des deux dossiers dans le même dépôt Git. J'ai utilisé Git tout au long du stage
+                    pour versionner mes modifications, avec des commits réguliers et descriptifs.
+                    Le versioning m'a permis de revenir en arrière lors d'une régression sur la gestion des plages
+                    horaires, ce qui a été un apprentissage concret de l'utilité du contrôle de version.
+                    Git était vu en cours (R1.07 Git) mais c'est lors du stage que j'ai réellement compris son
+                    apport sur un projet professionnel de longue durée.
+                </p>
+                <p style="font-size:0.87rem;">
+                    <span class="hl-project">Organiser le travail en phases progressives</span> : j'ai organisé
+                    mon travail en trois phases successives : (1) conception du modèle de données et mise en place
+                    de l'API, (2) développement de l'interface d'administration, (3) développement du client TV
+                    (vue affichage). Cette progression logique du fond vers la forme a permis de valider
+                    chaque couche avant d'en construire la suivante.
+                </p>
+            </div>
+        </div>
+
+        <!-- ===== BILAN ===== -->
+        <div id="sbilan" class="tab-panel">
+            <div class="card">
+                <div class="card-title"><span class="icon">📊</span> Bilan &amp; Analyse — Savoir-faire généraux en suivi de projet</div>
+                <p style="font-size:0.87rem;margin-bottom:1rem;">
+                    Les deux traces précédentes illustrent des savoir-faire élémentaires liés à l'analyse des besoins
+                    et à l'organisation du travail. Voici l'évaluation justifiée du niveau atteint.
+                </p>
+
+                <!-- SF 1 -->
+                <div class="exp-block">
+                    <div class="exp-head">
+                        <div class="exp-name">Savoir analyser les besoins utilisateurs et contribuer à un cahier des charges</div>
+                        <span class="exp-lvl lvl-inter">Intermédiaire</span>
+                    </div>
+                    <div class="exp-bar-wrap">
+                        <div class="exp-bar-fill" style="width:50%"></div>
+                    </div>
+                    <p class="exp-compare">
+                        <strong>Savoir-faire élémentaires :</strong> identifier les parties prenantes,
+                        synthétiser des besoins hétérogènes, traduire les besoins en fonctionnalités (entités métier),
+                        identifier les contraintes non-fonctionnelles (trace S-1).<br>
+                        <strong>Contexte d'apprentissage :</strong> partiellement vu en cours (R3.05 Gestion de projet,
+                        R3.08 Analyse). Le cahier des charges était déjà rédigé en arrivant, mais j'ai dû
+                        l'analyser, le comprendre et l'utiliser pour guider toutes mes décisions de développement.<br>
+                        <strong>Difficulté :</strong> moyenne — la difficulté principale était de comprendre le
+                        métier (médico-social) pour traduire les besoins en fonctionnalités logicielles pertinentes.<br>
+                        <strong>Avant :</strong> débutant (projets académiques avec besoins déjà définis).
+                        <strong>Après :</strong> <em>intermédiaire</em> — je comprends la structure d'un cahier des charges
+                        professionnel et suis capable d'en déduire un modèle de données.
+                        Je n'ai cependant pas conduit d'entretiens utilisateurs moi-même.
+                    </p>
+                </div>
+
+                <!-- SF 2 -->
+                <div class="exp-block">
+                    <div class="exp-head">
+                        <div class="exp-name">Savoir concevoir l'architecture d'une application et organiser son travail</div>
+                        <span class="exp-lvl lvl-bon">Bon</span>
+                    </div>
+                    <div class="exp-bar-wrap">
+                        <div class="exp-bar-fill" style="width:65%"></div>
+                    </div>
+                    <p class="exp-compare">
+                        <strong>Savoir-faire élémentaires :</strong> concevoir une architecture multi-tiers API/Web,
+                        organiser le code par couches (Controller, Service, Entity), utiliser Git pour le versioning,
+                        organiser le développement en phases successives (trace S-2).<br>
+                        <strong>Contexte d'apprentissage :</strong> l'architecture logicielle était vue en cours
+                        (R4.01) de manière théorique. La mise en pratique sur un projet réel avec une contrainte
+                        de réutilisabilité (API accessible par plusieurs clients) m'a permis de comprendre
+                        concrètement l'intérêt de la séparation des responsabilités.<br>
+                        <strong>Avant :</strong> intermédiaire (architecture MVC en cours, pas de API/front séparés).
+                        <strong>Après :</strong> <em>bon</em> — je maîtrise la conception d'une architecture
+                        bi-applicative cohérente, et j'ai développé des automatismes de structuration du code
+                        (services, repositories, injection de dépendances) qui me font gagner du temps.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<script>
+function showTab(id) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+}
+</script>
+</body>
+</html>

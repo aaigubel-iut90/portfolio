@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Arthur Aigubelle | Accueil</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== EN-TÊTE (toujours visible) ===== -->
+<header class="site-header">
+    <span class="hdr-name">Aigubelle Arthur</span>
+    <span class="hdr-sep">|</span>
+    <span class="hdr-email">arthur.aigubelle@gmail.com</span>
+    <div class="hdr-right">
+        <span class="hdr-badge">BUT Informatique — 2ème année</span>
+        <span class="hdr-badge accent">IUT Belfort-Montbéliard</span>
+    </div>
+</header>
+
+<!-- ===== MISE EN PAGE ===== -->
+<div class="layout">
+
+    <!-- NAVIGATION PRINCIPALE -->
+    <nav class="sidebar">
+        <div class="sidebar-logo">
+            <div class="sidebar-logo-title">Portfolio</div>
+            <div class="sidebar-logo-name">Arthur Aigubelle</div>
+        </div>
+        <span class="nav-label">Navigation</span>
+        <a href="index.html" class="nav-link active">
+            <span class="nav-icon">🏠</span> Accueil
+        </a>
+        <a href="technique.html" class="nav-link">
+            <span class="nav-icon">⚙️</span> Technique
+        </a>
+        <a href="suivi-projet.html" class="nav-link">
+            <span class="nav-icon">📋</span> Suivi de projet
+        </a>
+        <a href="integration.html" class="nav-link">
+            <span class="nav-icon">🤝</span> Intégration en entreprise
+        </a>
+    </nav>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="main">
+
+        <!-- Hero -->
+        <div class="hero-card">
+            <div class="hero-title">Portfolio de stage — BUT Informatique 2ème année</div>
+            <p class="hero-text">
+                Ce portfolio présente mon expérience de stage réalisée à la <strong>Fondation Pluriel</strong> dans le cadre
+                de ma deuxième année de BUT Informatique (parcours Développement d'Applications) à l'IUT de Belfort-Montbéliard.
+                Il expose les savoir-faire acquis et mis en œuvre lors du développement d'un <strong>outil de diffusion
+                de contenus dynamiques sur écrans</strong>, et propose une auto-évaluation de mon niveau d'expertise
+                dans les domaines technique, gestion de projet et intégration en entreprise.
+            </p>
+        </div>
+
+        <!-- Contexte entreprise -->
+        <div class="card">
+            <div class="card-title"><span class="icon">🏢</span> Contexte entreprise — Fondation Pluriel</div>
+
+            <div class="grid-2">
+                <div>
+                    <p>
+                        La <strong>Fondation Pluriel</strong> est un collectif engagé au service des personnes
+                        en situation de handicap, de dépendance ou de fragilité sociale. Ses équipes accompagnent
+                        chaque personne dans l'élaboration et la mise en œuvre de son projet de vie, autour
+                        de la scolarisation, de la formation, du travail, de l'habitat et des loisirs.
+                    </p>
+                    <div class="stat-grid">
+                        <div class="stat-box">
+                            <div class="stat-num">3 600</div>
+                            <div class="stat-lbl">Personnes accompagnées</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num">69</div>
+                            <div class="stat-lbl">Sites de proximité</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num">2 000</div>
+                            <div class="stat-lbl">Professionnels engagés</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num">11</div>
+                            <div class="stat-lbl">Marques responsables</div>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-row-label">Direction</span>
+                        <span class="info-row-val">Direction Développement et Performance</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-row-label">Siège social</span>
+                        <span class="info-row-val">Franche-Comté / Bourgogne (région Montbéliard)</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-row-label">Secteur</span>
+                        <span class="info-row-val">Médico-social, handicap, inclusion</span>
+                    </div>
+                </div>
+
+                <div>
+                    <p style="font-weight:700;color:var(--navy);font-size:0.85rem;margin-bottom:0.6rem;">Personnels impliqués</p>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Rôle dans le projet</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Sylvie Ramasso</strong></td>
+                                <td>Cheffe de projet · Responsable intégration applications</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hélène Clog</strong></td>
+                                <td>Gestionnaire de projet · Responsable intégration applications</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Frédéric Coffinières</strong></td>
+                                <td>Expert métier / tuteur technique · Développeur</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Candice Bourgeois</strong></td>
+                                <td>Contributrice · Responsable communication</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-weight:700;color:var(--navy);font-size:0.85rem;margin:0.9rem 0 0.5rem;">Moyens de travail</p>
+                    <ul style="font-size:0.87rem;">
+                        <li>Poste de travail Windows — VSCode / PhpStorm</li>
+                        <li>Serveur local WampServer (Apache, PHP 8.2, MariaDB)</li>
+                        <li>Dépôt Git pour le versioning du code</li>
+                        <li>Azure Active Directory pour la gestion des accès</li>
+                        <li>Framework Symfony 6.4 (PHP) et Bootstrap 5</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contexte sujet -->
+        <div class="card">
+            <div class="card-title"><span class="icon">🎯</span> Contexte du sujet de stage</div>
+
+            <div class="grid-2">
+                <div>
+                    <p style="font-weight:700;color:var(--navy);font-size:0.85rem;margin-bottom:0.4rem;">Situation existante et ses limites</p>
+                    <p style="font-size:0.87rem;">
+                        Certains sites de la Fondation utilisaient le logiciel <strong>VT-Totem (VT-Design)</strong>
+                        pour afficher du contenu dynamique sur des écrans TV. Ce système présentait plusieurs problèmes :
+                    </p>
+                    <ul style="font-size:0.87rem;margin-top:0.4rem;">
+                        <li>Boîtiers spécifiques au <strong>coût élevé</strong></li>
+                        <li>Impossible de différencier l'affichage par écran</li>
+                        <li>Réinitialisation obligatoire après coupure réseau</li>
+                        <li>D'autres sites utilisaient des <strong>clés USB</strong> (mise à jour manuelle)</li>
+                        <li>Aucune solution unifiée sur l'ensemble des 69 sites</li>
+                    </ul>
+
+                    <p style="font-weight:700;color:var(--navy);font-size:0.85rem;margin:0.9rem 0 0.4rem;">Sujet du stage</p>
+                    <p style="font-size:0.87rem;">
+                        Développer un <strong>outil web de gestion des affichages dynamiques</strong> administré par le
+                        service communication. La solution devait permettre de diffuser du contenu différent selon les
+                        sites, à moindre coût, via n'importe quelle télévision avec accès internet, sans boîtier dédié.
+                    </p>
+                </div>
+
+                <div>
+                    <p style="font-weight:700;color:var(--navy);font-size:0.85rem;margin-bottom:0.4rem;">Enjeux et objectifs</p>
+                    <ul style="font-size:0.87rem;">
+                        <li>Solution <strong>unique</strong> couvrant les 69 sites de la fondation</li>
+                        <li>Contenu <strong>personnalisable</strong> par site et par écran</li>
+                        <li>Administration centralisée par le <strong>service communication</strong></li>
+                        <li>Coût réduit : fonctionne sur n'importe quelle TV avec un navigateur</li>
+                        <li>Affichage de médias variés (images, vidéos, PowerPoint, menus, météo…)</li>
+                        <li>Gestion de <strong>programmes</strong> (groupes de présentations) diffusés par plages horaires</li>
+                        <li>Authentification sécurisée via <strong>Azure Active Directory</strong> (SSO fondation)</li>
+                    </ul>
+
+                    <p style="font-weight:700;color:var(--navy);font-size:0.85rem;margin:0.9rem 0 0.4rem;">Livrable</p>
+                    <p style="font-size:0.87rem;">
+                        Une application web PHP/Symfony composée de deux services :
+                        une <strong>API REST</strong> (back-end métier) et une
+                        <strong>interface web</strong> (front-end administration), communiquant ensemble
+                        via des appels HTTP sécurisés.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Savoir-faire mobilisés -->
+        <div class="card">
+            <div class="card-title"><span class="icon">💡</span> Savoir-faire généraux mobilisés</div>
+            <p style="font-size:0.87rem;margin-bottom:1rem;">
+                Le sujet de stage a mobilisé des savoir-faire dans trois domaines :
+                <strong>technique informatique</strong>, <strong>suivi de projet</strong> et
+                <strong>intégration en entreprise</strong>. Les savoir-faire présentés en détail dans les
+                trois autres pages du portfolio sont signalés ci-dessous.
+            </p>
+
+            <div class="grid-3">
+                <!-- Technique -->
+                <div>
+                    <p style="font-size:0.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--dev);margin-bottom:0.5rem;">⚙️ Technique</p>
+                    <div class="skill-links">
+                        <a href="technique.html" class="skill-link-item sli-dev">
+                            <span class="sli-dot"></span>
+                            <strong>Développer une API REST avec Symfony</strong>
+                        </a>
+                        <a href="technique.html" class="skill-link-item sli-dev">
+                            <span class="sli-dot"></span>
+                            <strong>Concevoir un modèle de données ORM</strong>
+                        </a>
+                        <a href="technique.html" class="skill-link-item sli-dev">
+                            <span class="sli-dot"></span>
+                            <strong>Développer une app web MVC sécurisée</strong>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Suivi de projet -->
+                <div>
+                    <p style="font-size:0.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--project);margin-bottom:0.5rem;">📋 Suivi de projet</p>
+                    <div class="skill-links">
+                        <a href="suivi-projet.html" class="skill-link-item sli-project">
+                            <span class="sli-dot"></span>
+                            <strong>Analyser les besoins utilisateurs</strong>
+                        </a>
+                        <a href="suivi-projet.html" class="skill-link-item sli-project">
+                            <span class="sli-dot"></span>
+                            <strong>Concevoir une architecture logicielle</strong>
+                        </a>
+                        <a href="suivi-projet.html" class="skill-link-item sli-project">
+                            <span class="sli-dot"></span>
+                            <strong>Organiser son travail (Git, planning)</strong>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Intégration -->
+                <div>
+                    <p style="font-size:0.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--company);margin-bottom:0.5rem;">🤝 Intégration</p>
+                    <div class="skill-links">
+                        <a href="integration.html" class="skill-link-item sli-company">
+                            <span class="sli-dot"></span>
+                            <strong>S'intégrer dans une équipe projet</strong>
+                        </a>
+                        <a href="integration.html" class="skill-link-item sli-company">
+                            <span class="sli-dot"></span>
+                            <strong>Agir en autonomie de façon mesurée</strong>
+                        </a>
+                        <a href="integration.html" class="skill-link-item sli-company">
+                            <span class="sli-dot"></span>
+                            <strong>Communiquer avec les parties prenantes</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+</body>
+</html>
