@@ -90,21 +90,20 @@
                         <table class="data-table">
                             <thead>
                                 <tr>
-                                    <th>Nom / Prénom</th>
                                     <th>Rôle dans l'équipe projet</th>
                                     <th>Fonction à la Fondation</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td><strong>Sylvie Ramasso</strong></td><td><span class="skill s-project" style="font-size:.75rem">Chef de projet</span></td><td>Responsable intégration applications — Dir. Développement et Performance</td></tr>
-                                <tr><td><strong>Hélène Clog</strong></td><td><span class="skill s-project" style="font-size:.75rem">Gestionnaire de projet</span></td><td>Responsable intégration applications — Dir. Développement et Performance</td></tr>
-                                <tr><td><strong>Frédéric Coffinières</strong></td><td><span class="skill s-project" style="font-size:.75rem">Expert métier</span></td><td>Développeur</td></tr>
-                                <tr><td>Candice Bourgeois</td><td>Contributeur</td><td>Responsable communication</td></tr>
-                                <tr><td>Laurent Droxler</td><td>Contributeur</td><td>Directeur adjoint Industrie</td></tr>
-                                <tr><td>Jean-Luc Millot</td><td>Contributeur</td><td>Directeur DAME PM</td></tr>
-                                <tr><td>Stéphane Arnoult</td><td>Contributeur</td><td>Responsable logistique</td></tr>
-                                <tr><td>Dominique Seyller</td><td>Contributeur</td><td>Responsable agroalimentaire</td></tr>
-                                <tr><td>Alix Pages</td><td>Contributeur</td><td>Agent d'accueil</td></tr>
+                                <tr><td><span class="skill s-project" style="font-size:.75rem">Chef de projet</span></td><td>Responsable intégration applications — Dir. Développement et Performance</td></tr>
+                                <tr><td><span class="skill s-project" style="font-size:.75rem">Gestionnaire de projet</span></td><td>Responsable intégration applications — Dir. Développement et Performance</td></tr>
+                                <tr><td><span class="skill s-project" style="font-size:.75rem">Expert métier / tuteur technique</span></td><td>Développeur</td></tr>
+                                <tr><td>Contributeur</td><td>Responsable communication</td></tr>
+                                <tr><td>Contributeur</td><td>Directeur adjoint Industrie</td></tr>
+                                <tr><td>Contributeur</td><td>Directeur DAME PM</td></tr>
+                                <tr><td>Contributeur</td><td>Responsable logistique</td></tr>
+                                <tr><td>Contributeur</td><td>Responsable agroalimentaire</td></tr>
+                                <tr><td>Contributeur</td><td>Agent d'accueil</td></tr>
                             </tbody>
                         </table>
 
@@ -253,8 +252,8 @@
   └──────────────┘              └─────────────────┘</div>
 
                         <br>
-                        <p style="font-size:0.8rem;font-weight:700;color:var(--navy);margin-bottom:0.3rem;">Organisation Git du projet :</p>
-                        <div class="archi-box">Repository Git : diffusion_tv/
+                        <p style="font-size:0.8rem;font-weight:700;color:var(--navy);margin-bottom:0.3rem;">Organisation Git du projet (hébergé sur Gitea interne) :</p>
+                        <div class="archi-box">Repository Git : diffusion_tv/  ← hébergé sur Gitea (forge interne fondation)
 ├── diffusion_tv.api/       ← Application API REST Symfony    (5)
 │   ├── src/
 │   │   ├── Controller/     ← Routes REST (TvController, PresentationController…)
@@ -275,7 +274,7 @@
                             <div class="leg-item"><span class="leg-box lb-green">2</span> Authentification SSO Fondation (Azure Active Directory)</div>
                             <div class="leg-item"><span class="leg-box lb-orange">3</span> Base de données partagée entre les deux applications</div>
                             <div class="leg-item"><span class="leg-box lb-red">4</span> Token d'API : sécurise les échanges API ↔ Web</div>
-                            <div class="leg-item"><span class="leg-box lb-purple">5</span> Séparation en deux projets Git indépendants dans un même repo</div>
+                            <div class="leg-item"><span class="leg-box lb-purple">5</span> Séparation en deux projets Git indépendants dans un même repo (Gitea interne)</div>
                         </div>
                     </div>
                 </div>
@@ -329,6 +328,11 @@
                     de l'API, (2) développement de l'interface d'administration, (3) développement du client TV
                     (vue affichage). Cette progression logique du fond vers la forme a permis de valider
                     chaque couche avant d'en construire la suivante.
+                    Le suivi des tâches passait par des <strong>tickets créés sur Gitea</strong> (la forge Git
+                    interne de la fondation) par mon maître de stage : chaque ticket définissait une fonctionnalité
+                    à développer, ce qui structurait ma charge de travail de manière itérative.
+                    Ce mode de travail par tickets, similaire aux issues GitHub/GitLab vues en cours, m'a permis
+                    de comprendre concrètement comment un projet professionnel est piloté au quotidien.
                 </p>
             </div>
         </div>
